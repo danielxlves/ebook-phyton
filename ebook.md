@@ -1,13 +1,10 @@
-
-
-
 # Python (E-BOOK)
 
 ## O que é Python
 
 Python é uma linguagem de programação de alto nível, versátil e de fácil leitura. Desenvolvida por Guido van Rossum, ela se destaca pela sua sintaxe clara e expressiva. 
 
-## Conhecendo o interpretador Python e o seu ecossistema. 
+## Conhecendo o seu ecossistema. 
 
 Para executar um programa em python, você digita python prog.py (.py é a extensão do arquivo de um programa em python) na linha de comando, e o programa é executado. Mas o que é esse python que você digitou?
 
@@ -32,21 +29,48 @@ Fontes -> https://algoritmosempython.com.br, https://docs.python.org
 ## Python é só interpretada?
 A resposta é: Não!
 
-Ela é uma junção de uma linguagem interpretada comum e uma linguagem compilada comum.
+Ela é uma "junção" de uma linguagem compilada comum e uma linguagem interpretada comum, nesta ordem.
 
+Mas primeiramente uma dúvida corriqueira sobre os codinomes a linguagem e o interpretador, Python e CPython:
+
+### Python é interpretado ou compilado? A questão não é realmente bem formulada.
+Dito isso, para a implementação mais comum (CPython: escrita em C, frequentemente referenciada simplesmente como 'Python', e certamente o que você está usando se você não tem ideia do que estou falando), a resposta é: interpretada , com alguma compilação . CPython compila** código fonte Python para bytecode, e depois *interpreta este bytecode, executando conforme progride.
+
+> Nota: isto não é 'compilação' no sentido tradicional da palavra. Normalmente, diríamos que 'compilação' é pegar uma linguagem de alto nível e convertê-la para código de máquina. Mas é uma certa 'compilação'.
 Em Python, o interpretador e compilador estão relacionados e coexistem. O interpretador CPython, que é a implementação de referência da linguagem Python, realiza ambos os papéis em conjunto. Isso é conhecido como interpretação just-in-time (JIT) e compilação.
+
+### Bytecode vs. Código de Máquina
+
+É muito importante entender a diferença entre bytecode e código de máquina (ou nativo), talvez melhor ilustrado pelo exemplo:
+
+C compilado para código de máquina, que é depois executado diretamente no seu processador. Cada instrução instrui sua CPU a realizar coisas por toda parte.
+
+Compilação Java para bytecode, que depois é executada na Java Virtual Machine (JVM), uma abstração de um computador que executa programas. Cada instrução é então tratada pela JVM, que interage com seu computador.
+
+*Em termos breves: o código da máquina é muito mais rápido, mas o bytecode é mais portátil e seguro .*
+
+O código de máquina parece diferente dependendo de sua máquina, mas o bytecode parece igual em todas as máquinas. Alguém pode dizer que o código da máquina é otimizado para sua configuração.
+
+### Voltando ao CPython, o processo de toolchain é como segue:
+
+> toolchain: É um conjunto de ferramentas de programação usadas para executar uma tarefa complexa de desenvolvimento de software.
+
+- CPython compila seu código fonte Python para bytecode.
+- Este bytecode foi então executado na Máquina Virtual CPython.
+
+Iniciantes assumem que Python é compilado por causa dos arquivos .pyc. Há alguma verdade nisto: o arquivo .pyc é bytecode compilado, que é depois interpretado. Então se você rodou seu código Python antes e tem o arquivo .pyc disponível, ele vai rodar mais rápido na segunda vez, já que não precisa recompilar o bytecode.
 
 Quando você executa um script Python, o interpretador CPython realiza as seguintes etapas:
 
 ### Compilação para Bytecode (Modo de Compilação)
 
-O código-fonte Python (.py) é compilado para bytecode Python (.pyc) pelo compilador embutido em tempo de execução. Esse bytecode é uma representação intermediária.
+O código-fonte Python (.py) é compilado para bytecode Python (.pyc) pelo compilador CPython em tempo de execução. Esse bytecode é uma representação intermediária, entre o codigo nativo e o codigo de máquina. 
 
-### Execução do Bytecode na Máquina Virtual Python (Modo de Interpretação)
+### Execução do Bytecode na Máquina Virtual CPython (Modo de Interpretação)
 
-O bytecode gerado é interpretado e executado pela Python Virtual Machine (PVM). Durante a execução, o interpretador pode otimizar certas partes do código para melhor desempenho.
+O bytecode gerado é interpretado e executado pela máquina virtual CPython. Durante a execução, o interpretador pode otimizar certas partes do código para melhor desempenho.
 
-Essa combinação de compilação para bytecode e interpretação em tempo real proporciona uma abordagem flexível e portável para a execução de código Python. O bytecode é armazenado em arquivos .pyc para otimizar o tempo de carregamento e execução subsequente do script.
+Essa combinação de compilação para bytecode e interpretação em tempo real proporciona uma abordagem flexível e portável para a execução de código Python. 
 
 ### Conclusão
 
@@ -54,10 +78,12 @@ Portanto, não é necessário que os desenvolvedores executem explicitamente um 
 
 O Python utiliza um processo de compilação just-in-time (JIT), onde o código fonte é compilado para um bytecode em tempo de execução.
 
-- É correto falar que o Python é compilado linha por linha em execução em tempo real?
-- Sim!
+> \- É correto falar que o Python é compilado em tempo real de execução ?
+\- Sim!
 
-## Ciclo de Vida do Código em Python Em Scripts
+Fonte -> https://www.toptal.com/python/por-que-h-tantos-pythons
+
+## Ciclo de Vida do Código em Python Em Scripts, Passo a Passo.
 O ciclo de vida do código Python pode ser dividido em três fases principais.
 
 ### Nascimento
@@ -65,9 +91,9 @@ Criação do Código: Desenvolvedores escrevem o código em um editor de texto o
 Salvamento do Arquivo: O código é salvo em um arquivo .py.
 
 ### Execução
-Interpretação e Compilação para Bytecode: O interpretador Python lê e converte o código-fonte em bytecode durante a interpretação.
+Interpretação e Compilação para Bytecode: O interpretador Python lê e converte (compila) o código-fonte em bytecode durante a interpretação.
 
-Execução do Bytecode: A Máquina Virtual Python executa diretamente o bytecode gerado, realizando as instruções do programa, assim se tornando uma linguagem multiplataforma. 
+Execução do Bytecode: A Máquina Virtual CPython executa diretamente o bytecode gerado, realizando as instruções do programa, assim se tornando uma linguagem multiplataforma. 
 
 ### Término
 Conclusão da Execução: O código termina quando todas as instruções são executadas ou ocorre um evento que interrompe a execução.
@@ -334,22 +360,41 @@ Esses operadores lógicos são úteis em situações onde você precisa tomar de
 - `esta_chovendo = True`
 - `nao_esta_chovendo = not esta_chovendo  # False, porque estamos invertendo a condição de "está chovendo"`
 
-## Seção de prática dos assuntos abordados.
+## Prática dos assuntos abordados.
 
-Prática -> Faça operações aritméticas no modo interativo do python de dois inteiros.
-Exemplo: 
 
-[ powershell ou terminal   
+**Exercícios sobre Variáveis e Tipos de Dados:**
 
-python #Entra no modo interativo
+1. Crie uma variável chamada `nome` e atribua a ela o seu próprio nome. Em seguida, imprima a mensagem "Olá, [nome]!".
 
-anoDeNascimento = 2001
-anoAtual = 2023
+2. Declare uma variável chamada `numero` e atribua a ela um número inteiro. Em seguida, imprima o dobro desse número.
 
-minhaIdade = anoAtual - anoDeNascimento
+3. Crie uma variável chamada `preco` e atribua a ela um valor decimal representando o preço de um produto. Imprima o preço com um desconto de 10%.
 
-print(minhaIdade) # print é uma função que imprime os dados no console.
-minhaIdade # Sem o print também é possível visualizar o resultado.
+4. Declare uma variável chamada `booleano` e atribua a ela um valor booleano (True ou False). Em seguida, imprima o valor oposto usando o operador lógico NOT.
 
-]
+**Exercícios sobre Input e Casting:**
 
+5. Peça ao usuário para digitar um número. Armazene o valor na variável `entrada` e imprima o quadrado desse número.
+
+6. Solicite ao usuário que insira sua idade como uma string. Converta a string para um número inteiro e imprima a idade.
+
+**Exercícios sobre Operadores Aritméticos:**
+
+7. Declare duas variáveis, `lado1` e `lado2`, representando os lados de um retângulo. Calcule e imprima a área do retângulo.
+
+8. Peça ao usuário para digitar um número decimal. Arredonde esse número para cima e para baixo e imprima os resultados.
+
+**Exercícios sobre Operadores de Comparação:**
+
+10. Declare duas variáveis, `temperatura_atual` e `limite_frio`, representando a temperatura atual e o limite para estar frio. Verifique se está frio (abaixo do limite) e imprima o resultado como true ou false.
+
+11. Peça ao usuário para inserir dois números. Compare os números e imprima uma mensagem indicando qual é o maior.
+
+**Exercícios sobre Operadores Lógicos:**
+
+12. Crie variáveis `tem_sol` e `tem_calor`, representando se está ensolarado e se está calor. Use operadores lógicos para determinar se é um bom dia para ir à praia.
+
+13. Declare uma variável `idade` e verifique se a pessoa é elegível para votar (idade maior ou igual a 18) e se é um número par. Imprima o resultado.
+
+Esses exercícios ajudarão a praticar conceitos básicos de Python, desde variáveis e tipos de dados até operadores e lógica condicional.
