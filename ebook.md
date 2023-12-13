@@ -398,3 +398,76 @@ Esses operadores lógicos são úteis em situações onde você precisa tomar de
 13. Declare uma variável `idade` e verifique se a pessoa é elegível para votar (idade maior ou igual a 18) e se é um número par. Imprima o resultado.
 
 Esses exercícios ajudarão a praticar conceitos básicos de Python, desde variáveis e tipos de dados até operadores e lógica condicional.
+
+## Python: Saída de Dados
+
+### 1. Função `print()`
+
+A função `print` é usada para exibir informações na tela. É uma maneira simples de interagir com o usuário ou visualizar resultados de código. Você pode passar strings, variáveis ou expressões como argumentos para a função `print`.
+
+Exemplo:
+```python
+print("Olá, Mundo!")
+```
+Neste exemplo, a função `print` exibe a mensagem "Olá, Mundo!" na tela.
+
+### 2. Parâmetro `.format`
+
+O método `.format` é utilizado para formatar strings de uma maneira mais dinâmica, permitindo a inserção de valores em posições específicas na string.
+
+Exemplo:
+```python
+nome = "Alice"
+idade = 25
+print("Olá, meu nome é {} e tenho {} anos.".format(nome, idade))
+```
+Neste exemplo, `{}` são espaços reservados que serão preenchidos pelos valores de `nome` e `idade` na ordem em que são fornecidos para o método `.format`.
+
+### 3. F-strings (Formated String Literals)
+
+As f-strings são uma maneira mais recente e concisa de formatar strings no Python. Elas começam com o prefixo `f` antes da string e permitem a incorporação direta de variáveis ou expressões dentro da string.
+
+Exemplo:
+```python
+nome = "Bob"
+idade = 30
+print(f"Olá, meu nome é {nome} e tenho {idade} anos.")
+```
+As variáveis dentro das chaves `{}` são substituídas pelos valores correspondentes.
+
+### 4. Saída de Dados Amigável
+
+#### Arredondamento de Números
+O exemplo abaixo demonstra como arredondar números para um número específico de casas decimais usando a f-string:
+
+```python
+pi = 3.14159
+print(f"O valor de pi é aproximadamente {pi:.2f}")
+```
+Neste caso, `:.2f` significa que o número será formatado como um float com duas casas decimais.
+
+#### Caracteres de Escape
+Os caracteres de escape são usados para representar sequências especiais, como quebras de linha. Por exemplo:
+
+```python
+print("Quebra de linha:\nSegunda linha.")
+```
+O `\n` representa uma quebra de linha.
+
+#### Atalhos Úteis
+O atalho `\t` é utilizado para inserir uma tabulação:
+
+```python
+print("Item\tQuantidade\tPreço")
+print("Laptop\t2\t\t$1000")
+```
+A `\t` cria um espaço equivalente a uma tabulação, útil para organizar colunas.
+
+Neste exemplo, as aspas duplas dentro da string são escapadas usando a barra invertida `\`. Isso permite que elas sejam tratadas como parte da string, em vez de indicar o fim da string. O mesmo princípio se aplica a outros caracteres especiais que podem interferir na formatação da string.
+
+```python
+mensagem = "Eu sou uma string com aspas \"duplas\" dentro."
+print(mensagem)
+```
+
+Esses conceitos são fundamentais para a produção de saídas de dados legíveis e informativas em Python. À medida que você avança na programação, essas técnicas se tornam ferramentas poderosas para comunicar informações de maneira eficaz.
