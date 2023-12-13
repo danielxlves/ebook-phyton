@@ -573,3 +573,72 @@ else:
 ```
 
 Aqui, cada `elif` testa uma faixa diferente de notas. Aonde a condição for verdadeira, ela será executada e será encerrado o programa.
+
+## Python: Laços com While
+
+
+### O Básico do Laço While:
+O laço `while` é usado para repetir um bloco de código enquanto uma condição for verdadeira. A estrutura básica é:
+
+```python
+while condição:
+    # Código a ser executado enquanto a condição for verdadeira
+```
+
+### Por que Usar Laços While:
+Os laços `while` são poderosos porque permitem a execução repetida de código com base em uma condição dinâmica. Isso é útil em situações em que você não sabe quantas vezes o código precisa ser repetido.
+
+
+### Incremento e Decremento:
+- **Incremento**: Aumentar o valor de uma variável. Exemplo: `contador = contador + 1` abreviando: `contador += 1` ou `contador++`.
+- **Decremento**: Diminuir o valor de uma variável. Exemplo: `contador = contador - 1`  abreviando: `contador -= 1` ou `contador--`.
+
+### Exemplo 1: Contagem Regressiva:
+```python
+contador = 5
+while contador > 0:
+    print(contador)
+    contador -= 1
+print("Fogo!")
+```
+
+Este exemplo mostra uma contagem regressiva até 1, usando a operação de decremento (`contador = contador - 1`). O bloco dentro do `while` é executado enquanto a condição (`contador > 0`) for verdadeira.
+
+
+### Comando break:
+O break é uma instrução que interrompe a execução de um loop imediatamente, mesmo que a condição associada ao loop ainda seja verdadeira. Ele é utilizado para sair do loop antes que a condição de parada seja alcançada. 
+
+### Exemplo 2: Interação com o Usuário:
+```python
+tentativas = 3
+senha_correta = "python123"
+
+while tentativas > 0:
+    tentativa = input("Digite a senha: ")
+    if tentativa == senha_correta:
+        print("Bem-vindo!")
+        break  # Sai do loop se a senha estiver correta
+    else:
+        tentativas -= 1
+        print(f"Senha incorreta! Restam {tentativas} tentativas.")
+```
+
+Este exemplo solicita ao usuário que digite uma senha. O loop continuará até que a senha correta seja inserida ou até que todas as tentativas se esgotem.
+
+### Laços Infinitos - Exemplos Errados:
+Evite criar loops infinitos, pois eles podem travar seu programa. Exemplos incorretos:
+
+```python
+# Exemplo 1 - Sem alteração da condição verdadeira.
+while True:
+    print("Este é um loop infinito!")
+
+# Exemplo 2 - Esquecendo de alterar a variável no corpo do loop. O contador sempre será menor que 5.
+
+contador = 0
+while contador < 5:
+    print("Este é outro loop infinito!")
+```
+
+### Conclusão:
+Os laços `while` são uma ferramenta poderosa em Python, permitindo a execução de código repetido de maneira controlada. Ao entender como usá-los efetivamente, você estará mais preparado para enfrentar desafios de programação. Pratique, experimente e divirta-se programando em Python!
