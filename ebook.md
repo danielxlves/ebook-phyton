@@ -471,3 +471,105 @@ print(mensagem)
 ```
 
 Esses conceitos são fundamentais para a produção de saídas de dados legíveis e informativas em Python. À medida que você avança na programação, essas técnicas se tornam ferramentas poderosas para comunicar informações de maneira eficaz.
+
+## Python: Desvios Condicionais
+
+
+### Por que Desvios Condicionais?
+
+Vamos imaginar um programa como um semáforo de trânsito. Em alguns momentos, ele exibe a luz verde, indicando que é seguro avançar. Em outras situações, mostra a luz vermelha, sinalizando a necessidade de parar. Os desvios condicionais em programação são como as regras para o semáforo: "Se a luz estiver verde, avance; senão, espere."
+
+### Estrutura Básica:
+
+Blocos em Python são marcados pelo uso do caractere `:`. Eles indicam o início de um bloco de código associado a uma estrutura, como `if` ou `else`.
+
+A indentação (espaço antes das linhas de código) é crucial. Ela define o escopo do bloco. Tudo que está indentado sob um `if` pertence a ele. A indentação é como o Python entende o que está dentro ou fora do bloco.
+
+```python
+if condição:
+    # o espaço inicial desta linha é a indentação.
+    # faça algo se a condição for verdadeira.
+else:
+    # faça algo se a condição for falsa
+```
+
+### Exemplo no Mundo Real:
+
+Vamos usar um exemplo cotidiano: decidir se você deve levar um guarda-chuva ao sair. A condição seria "se estiver chovendo". Vamos traduzir isso para Python:
+
+```python
+clima = input("Está chovendo hoje? (sim/não): ")
+
+if clima.lower() == "sim":
+    print("Leve um guarda-chuva!")
+else:
+    print("Você pode sair sem guarda-chuva.")
+```
+
+Neste exemplo:
+- `clima.lower()` converte a entrada do usuário para minúsculas, garantindo que "SIM" ou "sim" sejam tratados da mesma forma.
+
+### Dinâmica:
+
+Agora, imagine que a condição seja mais complexa. Digamos que você também quer levar o guarda-chuva se houver previsão de chuva. Isso nos leva aos operadores lógicos (`and`, `or`, `not`).
+
+```python
+clima = input("Está chovendo hoje? (sim/não): ")
+previsao_chuva = input("Há previsão de chuva? (sim/não): ")
+
+if clima.lower() == "sim" or previsao_chuva.lower() == "sim":
+    print("Leve um guarda-chuva!")
+else:
+    print("Você pode sair sem guarda-chuva.")
+```
+
+### Poder na Simplicidade:
+
+Desvios condicionais tornam o código flexível. Imagine um jogo onde o jogador só pode avançar se tiver uma chave. Sem desvios condicionais, o jogo seria estático. Com eles, você pode criar experiências dinâmicas.
+
+### Dica Útil:
+
+Use desvios condicionais para lidar com diferentes cenários. Eles tornam seu código mais inteligente, eficiente e fácil de entender.
+
+### Explorando o elif:
+
+Agora, vamos adicionar mais complexidade usando `elif` (abreviação de "else if"). Ele permite testar várias condições em sequência. 
+
+ 
+- *if = se*
+- *elif = se não se* 
+- *else= se não*
+
+```python
+hora = int(input("Que horas são? "))
+
+if hora < 12:
+    print("Bom dia!")
+elif 12 <= hora < 18:
+    print("Boa tarde!")
+else:
+    print("Boa noite!")
+```
+
+Neste exemplo, o programa saúda o usuário com base na hora do dia.
+
+### Utilizando Múltiplos elif:
+
+Vamos criar um programa que avalia a nota de um aluno:
+
+```python
+nota = float(input("Digite a nota do aluno: "))
+
+if nota >= 9:
+    print("Nota A")
+elif 7 <= nota < 9:
+    print("Nota B")
+elif 5 <= nota < 7:
+    print("Nota C")
+elif 3 <= nota < 5:
+    print("Nota D")
+else:
+    print("Nota F")
+```
+
+Aqui, cada `elif` testa uma faixa diferente de notas. Aonde a condição for verdadeira, ela será executada e será encerrado o programa.
