@@ -247,7 +247,94 @@ O resultado será:  `<class 'int'> `
 
 A função pode ser utilizada para descobrir qualquer tipo de variável.
 
-## Para podermos brincar mais com a linguagem vamos introduzir
+## **Input e Casting**
+
+- **Input**: A função `input()` é usada para receber entrada do usuário, retornando a entrada como uma string. Por exemplo, `nome = input("Digite seu nome:")`.
+
+- **Casting**: Para converter uma string em outro tipo de dado (por exemplo, de string para inteiro), você pode usar funções de casting como `int()`, `float()`, etc. Por exemplo, `numero_str = input("Digite um número:")` e `numero_int = int(numero_str)`.
+
+Lembre-se de que a entrada do usuário por meio de `input()` é sempre uma string, e você precisa realizar casting para o tipo desejado, se necessário.
+
+## Introduzindo operadores
+
+## Operadores Aritméticos
+
+Em Python, os operadores aritméticos são utilizados para realizar operações matemáticas em variáveis e valores. Abaixo estão alguns dos operadores aritméticos comuns:
+
+- **Adição `+`**: Soma dois valores. Por exemplo, `operacao = 5 + 3` resulta em 8.
+
+- **Subtração `-`**: Subtrai o valor do lado direito do valor do lado esquerdo. Por exemplo, `operacao = 5 - 3` resulta em 2.
+
+- **Multiplicação `*`**: Multiplica dois valores. Por exemplo, `operacao = 5 * 3` resulta em 15.
+
+- **Divisão `/`**: Divide o valor do lado esquerdo pelo valor do lado direito. Por exemplo, `operacao = 10 / 2` resulta em 5.0.
+
+- **Divisão Inteira `//`**: Divide e retorna a parte inteira. Por exemplo, `operacao = 10 // 3` resulta em 3.
+
+- **Módulo `%`**: Retorna o resto da divisão. Por exemplo, `operacao = 10 % 3` resulta em 1.
+
+- **Exponenciação `**`**: Eleva um valor à potência de outro. Por exemplo, `operacao = 2 ** 3` resulta em 8.
+
+### Ordem de Prioridade das Operações em Python
+
+A ordem de prioridade das operações em Python segue as regras convencionais da matemática. Aqui está uma lista, da mais alta para a mais baixa prioridade:
+
+1. **Parênteses `()`**: Expressões dentro de parênteses têm a maior prioridade. Qualquer operação dentro de parênteses é avaliada primeiro.
+
+2. **Exponenciação `**`**: A exponenciação tem a segunda maior prioridade. Por exemplo, `2 ** 3` é avaliado antes de outras operações.
+
+3. **Negativo unário `-` e positivo unário `+`**: O sinal negativo unário e positivo unário têm a terceira maior prioridade.
+
+4. **Multiplicação `*`, Divisão `/`, Divisão Inteira `//`, Módulo `%`**: Essas operações têm a mesma prioridade e são avaliadas da esquerda para a direita.
+
+5. **Adição `+` e Subtração `-`**: Adição e subtração têm a menor prioridade e também são avaliadas da esquerda para a direita.
+
+A utilização de parênteses pode ser usada para alterar a ordem de avaliação padrão e forçar uma determinada parte da expressão a ser avaliada primeiro.
+
+## Operadores de comparação
+Os operadores de comparação em Python são usados para comparar dois valores e produzir um resultado booleano (True ou False). Aqui estão alguns exemplos dos operadores de comparação com explicação. 
+
+- `valor1 = 10`
+- `valor2 = 5`
+
+**Operador de Igualdade (`==`):**
+- `resultado_igual = valor1 == valor2  # False, pois 10 não é igual a 5`
+
+**Operador de Diferença (`!=`):**
+- `resultado_diferente = valor1 != valor2  # True, pois 10 é diferente de 5`
+
+**Operador de Maior que (`>`):**
+- `resultado_maior = valor1 > valor2  # True, pois 10 é maior que 5`
+
+**Operador de Menor que (`<`):**
+- `resultado_menor = valor1 < valor2  # False, pois 10 não é menor que 5`
+
+**Operador de Maior ou Igual a (`>=`):**
+- `resultado_maior_igual = valor1 >= valor2  # True, pois 10 é maior ou igual a 5`
+
+**Operador de Menor ou Igual a (`<=`):**
+- `resultado_menor_igual = valor1 <= valor2  # False, pois 10 não é menor ou igual a 5`
+
+
+## Operadores Lógicos
+
+Esses operadores lógicos são úteis em situações onde você precisa tomar decisões com base em múltiplas condições. Eles ajudam a construir uma lógica mais complexa em seus programas, permitindo que você modele diferentes cenários de forma clara e eficiente. Retornando sempre um valor booleano (bool).
+
+**Operador Lógico AND (`and`):**
+- `tem_sol = True`
+- `folga = True`
+- `vamos_ao_parque = tem_sol and folga  # True, porque temos tempo ensolarado e estamos de folga`
+
+**Operador Lógico OR (`or`):**
+- `frio = True`
+- `chocolate_quente = True`
+- `queremos_bebida_quente = frio or chocolate_quente  # True, porque está frio lá fora OU temos chocolate quente em casa`
+
+**Operador Lógico NOT (`not`):**
+- `esta_chovendo = True`
+- `nao_esta_chovendo = not esta_chovendo  # False, porque estamos invertendo a condição de "está chovendo"`
+
+## Seção de prática dos assuntos abordados.
 
 Prática -> Faça operações aritméticas no modo interativo do python de dois inteiros.
 Exemplo: 
