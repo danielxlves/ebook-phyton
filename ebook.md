@@ -954,3 +954,100 @@ No contexto da gestão de pacotes e manipulação de módulos em Python, destaca
 No âmbito da administração de pacotes com Pip, abordamos comandos essenciais para listar, verificar versões, atualizar e instalar pacotes, bem como desinstalar. Na importação de pacotes e módulos, realçamos boas práticas, evitando importe universal e favorecendo a especificidade. A criação e uso de módulos próprios foram elucidados, incluindo a condição `__name__ == '__main__'` para execução específica, exemplificado em um cenário de operações matemáticas.
 
 Concluindo, apresentamos o NumPy como paradigma de um pacote significativo em Python, destacando suas aplicações em manipulação eficiente de arrays multidimensionais. Em síntese, a compreensão desses conceitos promove uma estrutura organizada, modular e eficiente no desenvolvimento em Python, facilitando a escalabilidade e colaboração em projetos diversos.
+
+
+### Módulo Random em Python
+
+O módulo `random` em Python é utilizado para gerar números pseudoaleatórios. Ele fornece várias funções para realizar diferentes operações relacionadas à aleatoriedade.
+
+### Gerando Números Inteiros Aleatórios com `randint`
+
+A função `randint(a, b)` retorna um número inteiro aleatório no intervalo [a, b]. Vamos usar um loop `for` para gerar e imprimir cinco números inteiros aleatórios entre 1 e 5:
+
+```python
+import random
+
+for n in range(5):
+    n = random.randint(1, 5)
+    print(n)
+```
+
+- `import random`: Importa o módulo `random`.
+- `for n in range(5)`: Inicia um loop que será executado cinco vezes.
+- `n = random.randint(1, 5)`: Gera um número inteiro aleatório entre 1 e 5 e o atribui à variável `n`.
+- `print(n)`: Imprime o valor de `n`.
+
+### Utilizando `random()` e Manipulando Resultados
+
+A função `random()` retorna um número decimal aleatório no intervalo [0.0, 1.0). Vamos demonstrar e manipular o resultado:
+
+```python
+value = random.random()
+print(value)
+
+# Multiplicando por 10
+multiplied_value = value * 10
+print(multiplied_value)
+
+# Arredondando
+rounded_value = round(multiplied_value)
+print(rounded_value)
+```
+
+- `random.random()`: Gera um número decimal aleatório entre 0.0 e 1.0.
+- `multiplied_value = value * 10`: Multiplica o valor por 10.
+- `rounded_value = round(multiplied_value)`: Arredonda o valor para o número inteiro mais próximo.
+
+### Utilizando `uniform()` para Números Decimais Aleatórios
+
+A função `uniform(a, b)` gera um número decimal aleatório no intervalo [a, b]. Vamos ver como usar isso:
+
+```python
+decimal_value = random.uniform(1.0, 5.0)
+rounded_decimal_value = round(decimal_value, 2)
+print(rounded_decimal_value)
+```
+
+- `random.uniform(1.0, 5.0)`: Gera um número decimal aleatório entre 1.0 e 5.0.
+- `rounded_decimal_value = round(decimal_value, 2)`: Arredonda o valor para duas casas decimais.
+
+### Escolhendo Aleatoriamente de uma Lista com `choice`
+
+A função `choice(seq)` escolhe aleatoriamente um elemento de uma sequência. Vamos ver um exemplo usando uma lista:
+
+```python
+my_list = [10, 20, 30, 40, 50]
+random_choice = random.choice(my_list)
+print(random_choice)
+```
+
+- `random.choice(my_list)`: Escolhe aleatoriamente um elemento da lista `my_list`.
+
+### Utilizando `sample()` para Extração de Amostras
+
+A função `sample(population, k)` retorna uma amostra única de tamanho `k` de uma população. Vamos usar uma lista para exemplificar:
+
+```python
+my_list = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+sampled_values = random.sample(my_list, 3)
+print(sampled_values)
+```
+
+- `random.sample(my_list, 3)`: Extrai uma amostra de 3 elementos únicos da lista `my_list`.
+
+### Embaralhando uma Lista com `shuffle`
+
+A função `shuffle(seq)` embaralha aleatoriamente os elementos de uma sequência. Aqui está um exemplo com uma lista:
+
+```python
+my_list = [1, 2, 3, 4, 5]
+random.shuffle(my_list)
+print(my_list)
+```
+
+- `random.shuffle(my_list)`: Embaralha aleatoriamente os elementos da lista `my_list`.
+
+Estes conceitos proporcionam uma base sólida para entender e utilizar o módulo `random` em Python. Experimente esses exemplos para ganhar uma compreensão prática.
+
+### Conclusão  
+O módulo `random` em Python oferece uma variedade de funções que permitem a geração de números aleatórios e manipulação de sequências de maneira eficaz. Ao compreender os conceitos apresentados, você estará apto a integrar a aleatoriedade em seus programas de forma controlada e útil.
