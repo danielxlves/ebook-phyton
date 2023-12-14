@@ -715,3 +715,60 @@ Este código simula a adição de itens ao carrinho de compras.
 
 ## Conclusão
 Os laços `for` são ferramentas incríveis para automatizar a execução de tarefas repetitivas em Python, tornando a programação mais eficiente e expressiva. Continue praticando e explorando novas maneiras de aplicar os laços em seus próprios projetos do mundo real!
+
+## Python: Encadeamento de Laços com Matrizes
+
+### Matriz em Python
+Uma matriz é uma estrutura de dados bidimensional, representada por linhas e colunas. Em Python, podemos criar uma matriz utilizando listas aninhadas. Vejamos um exemplo:
+
+```python
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+```
+
+Aqui, temos uma matriz 3x3, onde cada lista interna representa uma linha.
+
+### Encadeamento de Laços para Matrizes
+Agora, vamos encadear dois laços `for` para percorrer cada elemento da matriz. O primeiro laço irá percorrer as linhas, e o segundo laço irá percorrer os elementos dentro de cada linha.
+
+```python
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+for linha in matriz:
+    for elemento in linha:
+        print(elemento, end=' ')
+    print()  # Adiciona uma quebra de linha após cada linha da matriz
+```
+
+Este código imprimirá todos os elementos da matriz, linha por linha. A função `print(elemento, end=' ')` é usada para imprimir os elementos na mesma linha, separados por espaços.
+
+### Utilizando o Encadeamento de Laços
+Vamos agora exemplificar como utilizar o encadeamento de laços para realizar operações na matriz. Vamos calcular a soma de todos os elementos da matriz.
+
+```python
+matriz = [
+    [1, 2, 3],
+    [4, 5, 6],
+    [7, 8, 9]
+]
+
+soma = 0
+
+for linha in matriz:
+    for elemento in linha:
+        soma += elemento
+
+print(f"A soma de todos os elementos da matriz é: {soma}")
+```
+
+Neste exemplo, o código utiliza o encadeamento de laços para percorrer cada elemento da matriz e acumular a soma.
+
+### Conclusão
+O encadeamento de laços é uma técnica poderosa para trabalhar com estruturas de dados complexas, como matrizes. Permite acessar e manipular cada elemento individualmente, proporcionando uma flexibilidade valiosa em programação. Ao entender essa técnica, você estará preparado para lidar com estruturas de dados multidimensionais e enfrentar desafios mais complexos em seus projetos Python.
