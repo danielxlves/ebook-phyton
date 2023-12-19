@@ -1051,3 +1051,317 @@ Estes conceitos proporcionam uma base sólida para entender e utilizar o módulo
 
 ### Conclusão  
 O módulo `random` em Python oferece uma variedade de funções que permitem a geração de números aleatórios e manipulação de sequências de maneira eficaz. Ao compreender os conceitos apresentados, você estará apto a integrar a aleatoriedade em seus programas de forma controlada e útil.
+
+### Tuplas em Python:
+
+#### Diferenças entre Listas e Tuplas:
+1. **Imutabilidade:** As tuplas são imutáveis, sendo ideais para dados que não devem ser modificados após a criação.
+
+#### Exemplo de Tupla:
+```python
+tupla = (2, 3, 4, 5, 6)
+print(tupla)
+```
+
+#### Acessar Dados da Tupla:
+```python
+# A indexação em tuplas é semelhante às listas
+primeiro_elemento = tupla[0]
+print(f"Primeiro elemento: {primeiro_elemento}")
+```
+
+#### Concatenação de Tuplas:
+```python
+outra_tupla = (7, 8, 9)
+concatenada = tupla + outra_tupla
+print(f"Tupla concatenada: {concatenada}")
+```
+
+#### Método `count` em Tuplas:
+```python
+# Criando a tupla
+minha_tupla = (1, 2, 3, 4, 5, 5, 5, 6, 7, 8, 9, 77, 7, 7)
+
+# Realizando a contagem
+numero_cinco = 5
+contagem_numero_cinco = minha_tupla.count(numero_cinco)
+
+# Exibindo os resultados
+print(f"Tupla: {minha_tupla}")
+print(f"O número '{numero_cinco}' aparece na tupla {contagem_numero_cinco} vezes.")
+```
+
+#### Operador `in` em Tuplas:
+```python
+# Verifica se um elemento está presente na tupla
+esta_na_tupla = 5 in tupla
+print(f"O número '5' está na tupla? {esta_na_tupla}")
+```
+
+#### Métodos Comuns a Listas e Tuplas:
+- `len()`: Retorna o comprimento da tupla.
+- `index()`: Retorna o índice do primeiro item com o valor especificado.
+
+#### Criar uma Lista a partir de uma Tupla:
+```python
+lista_a_partir_de_tupla = list(tupla)
+print(f"Lista criada a partir da tupla: {lista_a_partir_de_tupla}")
+```
+
+#### Criar uma Tupla a partir de uma Lista:
+```python
+tupla_a_partir_de_lista = tuple(lista_a_partir_de_tupla)
+print(f"Tupla criada a partir da lista: {tupla_a_partir_de_lista}")
+```
+
+#### Método `sorted` em uma Tupla:
+```python
+# Retorna uma nova lista ordenada a partir dos elementos da tupla
+tupla_ordenada = tuple(sorted(tupla))
+print(f"Tupla ordenada: {tupla_ordenada}")
+```
+
+#### Método `sort` (apenas para listas):
+```python
+# Ordena a lista in-place (modifica a própria lista)
+lista = [4, 2, 8, 1, 6]
+lista.sort()
+print(f"Lista ordenada: {lista}")
+```
+
+### Conclusão:
+Tuplas em Python oferecem imutabilidade e são eficientes para armazenar dados que não precisam ser alterados. Seu desempenho em operações simples, como acesso a elementos e concatenação, as torna uma escolha valiosa em diversos cenários.
+
+## Funções Built-in
+
+As funções `max()`, `min()`, `abs()`, `pow()`, `round()` são exemplos de funções built-in em Python, o que significa que são funções integradas diretamente na linguagem e podem ser usadas sem a necessidade de importar módulos externos.
+
+1. `max(valores)`:
+   - **Descrição:** Retorna o valor máximo dentro da lista `valores`.
+   - **Código:**
+     ```python
+     valores = [2, 5, 6, 8, -1, 11, 6]
+     print(max(valores))
+     ```
+
+2. `min(valores)`:
+   - **Descrição:** Retorna o valor mínimo dentro da lista `valores`.
+   - **Código:**
+     ```python
+     valores = [2, 5, 6, 8, -1, 11, 6]
+     print(min(valores))
+     ```
+
+3. `abs(a)`:
+   - **Descrição:** Retorna o valor absoluto de `a`.
+   - **Código:**
+     ```python
+     a = -12
+     print(abs(a))
+     ```
+
+4. `pow(a, b)`:
+   - **Descrição:** Retorna `a` elevado à potência de `b`.
+   - **Código:**
+     ```python
+     a = -12
+     b = 2
+     print(pow(a, b))
+     ```
+
+5. `round(c, 3)`:
+   - **Descrição:** Arredonda o número `c` para 3 casas decimais.
+   - **Código:**
+     ```python
+     c = 2.79
+     print(round(c, 3))
+     ```
+
+### Módulo Math
+
+O módulo `math` em Python fornece funções matemáticas mais avançadas que não estão disponíveis diretamente como funções built-in.
+
+1. `math.sqrt(x)`:
+   - **Descrição:** Retorna a raiz quadrada de `x`.
+   - **Código:**
+     ```python
+     import math
+
+     x = 8
+     raiz_quadrada = math.sqrt(x)
+     ```
+
+2. `math.ceil(raiz_quadrada)`:
+   - **Descrição:** Arredonda para o menor inteiro maior ou igual a `raiz_quadrada`.
+   - **Código:**
+     ```python
+     import math
+
+     x = 8
+     raiz_quadrada = math.sqrt(x)
+     math.ceil(raiz_quadrada)
+     ```
+
+3. `math.floor(raiz_quadrada)`:
+   - **Descrição:** Arredonda para o maior inteiro menor ou igual a `raiz_quadrada`.
+   - **Código:**
+     ```python
+     import math
+
+     x = 8
+     raiz_quadrada = math.sqrt(x)
+     math.floor(raiz_quadrada)
+     ```
+
+4. `math.log10(y)`:
+   - **Descrição:** Retorna o logaritmo de `y` na base 10.
+   - **Código:**
+     ```python
+     import math
+
+     y = 100
+     log = math.log10(y)
+     ```
+
+5. Outras funções do módulo `math`:
+   - `math.pi`: Valor de π (pi).
+   - `math.factorial(x)`: Retorna o fatorial de `x`.
+   - `x/math.inf`: Representa a divisão de `x` por infinito.
+
+### Conclusão
+Em resumo, as funções built-in são uma parte integral da linguagem Python, proporcionando uma base sólida e acessível para muitas operações comuns, permitindo que os programadores desenvolvam código de forma mais eficiente e expressiva.
+
+
+## Strings em Pythom
+
+As strings em Python são sequências de caracteres, e neste guia, exploraremos conceitos fundamentais para manipular texto.
+
+**1. Acessando Caracteres e Tamanho da String:**
+Podemos acessar caracteres em uma string usando índices. Por exemplo, para obter o terceiro caractere da string "daniel", usamos `nome[2]`, pois a indexação começa em 0. Além disso, o método `len()` nos dá o comprimento da string.
+
+```python
+nome = "daniel"
+letra = nome[2]  # Acessa o terceiro caractere (índice 2)
+print(f"Letra: {letra}")
+
+# Obtendo o tamanho da string
+print(f"Tamanho da string: {len(nome)}")
+```
+
+**2. Concatenando Strings:**
+A concatenação de strings envolve a união de duas ou mais strings. Aqui, adicionamos "Olá, " à string `nome`.
+
+```python
+saudacao = "Olá, " + nome
+print(saudacao)
+```
+
+**3. Dividindo Strings:**
+Podemos dividir uma string em palavras usando o método `split()`, que retorna uma lista de substrings, por padrão o espaçamento das palavras (" ") é o parametro padrão para a divisão da string em palavras.
+
+```python
+frase = 'vamos aprender python hoje'
+palavras = frase.split()
+print(palavras)
+```
+
+**4. Iterando pelos Caracteres:**
+Usando um loop, podemos percorrer cada caractere em uma string.
+
+```python
+for letra in frase:
+    print(letra)
+```
+**5. Verificando Presença e Busca:**
+Podemos verificar se uma substring está presente em uma string usando os operadores `in` e `not in`. Além disso, o método `find()` retorna o índice da primeira ocorrência de uma substring.
+
+```python
+# Verificando a presença de substrings e buscando índices
+produtos = 'carbonato de sódio e óxido de zinco'
+print('sódio' in produtos)
+print('magnésio' not in produtos)
+
+item = 'hipoclorito'
+pos = item.find('clor')
+print(f"Índice de 'clor': {pos}")
+```
+
+**6. Slicing (Fatiamento) de Strings:**
+O slicing permite extrair partes específicas de uma string. Aqui, obtemos os primeiros cinco caracteres da `frase`.
+
+```python
+# Separando usuário e domínio de um e-mail
+email = 'daniel@alves.com'
+arroba = email.find('@')
+usuario = email[0:arroba]
+dominio = email[arroba+1:]
+print(f"Usuário: {usuario}\nDomínio: {dominio}")
+```
+
+**7. Manipulação de Maiúsculas e Minúsculas:**
+Podemos converter strings para maiúsculas, minúsculas, capitalizadas (primeira letra maiúscula) ou com cada palavra começando com maiúscula.
+
+```python
+# Manipulando o caso de letras em uma string
+objeto_celeste = 'galáxia espiral m31'
+print(objeto_celeste.upper())
+print(objeto_celeste.lower())
+print(objeto_celeste.capitalize())
+print(objeto_celeste.title())
+```
+
+**8. Substituição de Substrings:**
+O método `replace()` substitui todas as ocorrências de uma substring por outra.
+
+```python
+# Substituindo parte de uma string
+suplemento = 'cloreto de magnésio'
+n_suplemento = suplemento.replace('magnésio', 'zinco')
+print(f"Antes: {suplemento}\nDepois: {n_suplemento}")
+```
+
+**9. Removendo Espaços em Branco:**
+Os métodos `lstrip()`, `rstrip()`, e `strip()` removem espaços à esquerda, à direita e em ambos os lados de uma string, respectivamente.
+
+```python
+conteudo = '      bk é melhor que mac      '
+print(conteudo.lstrip())  # Removendo espaços à esquerda
+print(conteudo.rstrip())  # Removendo espaços à direita
+print(conteudo.strip())   # Removendo espaços em ambos os lados
+```
+
+**10. Justificação e Preenchimento:**
+Podemos justificar, alinhar à esquerda, à direita ou centralizar uma string em um determinado número de caracteres, preenchendo com caracteres específicos.
+
+```python
+fruta = 'Abacate'
+print(fruta.rjust(20))        # Justificando à direita
+print(fruta.ljust(20))        # Justificando à esquerda
+print(fruta.center(20))       # Centralizando
+
+print(fruta.rjust(20, "-"))   # Justificando com preenchimento
+print(fruta.center(20, "-"))
+```
+
+**11. Verificando o Início e o Fim:**
+Os métodos `startswith()` e `endswith()` verificam se uma string começa ou termina com uma determinada substring.
+
+```python
+p = 'bk'
+print(p.startswith('b'))  # Verificando se começa com 'b'
+print(p.endswith('k'))    # Verificando se termina com 'k'
+```
+
+**12. Docstrings:**
+```python
+"""
+Docstring é uma espécie de documentação que podemos inserir dentro de um módulo, função ou classe no Python. 
+Respeita a indentação e é multilinhas.
+"""
+```
+
+Espero que este guia ajude a entender e praticar conceitos essenciais de manipulação de strings em Python.
+
+### Conclusão
+
+Dominar o manejo de strings em Python é crucial para manipular texto de maneira eficiente. Desde o acesso a caracteres até operações avançadas como busca e substituição, este guia oferece uma base sólida. Explore esses conceitos para aprimorar suas habilidades na linguagem, tornando-se mais proficientes na manipulação de dados textuais.
